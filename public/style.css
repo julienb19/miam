@@ -148,8 +148,8 @@ body {
 }
 
 .container-titre h1 {
-  color: black;
-  font-family: "Times New Roman", Times, serif;
+  color: black; /* Couleur du texte */
+  font-family: "Poppins", sans-serif; /* Police */
 }
 
 .pack .container {
@@ -324,7 +324,7 @@ body {
 }
 
 .intro {
-  font-weight: 300;
+  font-weight: 600px;
   font-family: cursive;
   font-size: 22px;
   line-height: 1.8;
@@ -350,6 +350,7 @@ body {
   color: #232323;
   margin-bottom: 50px;
   position: relative;
+  font-family: cursive;
 }
 
 /* Conteneur principal */
@@ -418,6 +419,14 @@ body {
 
 /* Responsivité */
 @media (max-width: 749px) {
+  .titre {
+    font-size: 1.5em; /* Réduire la taille de la police pour les très petits écrans */
+  }
+
+  .intro {
+    font-size: 1em; /* Réduire la taille de la police pour le texte d'introduction */
+  }
+
   .content {
     flex-direction: column; /* Passer à la colonne sur petits écrans */
     align-items: center; /* Centrer horizontalement */
