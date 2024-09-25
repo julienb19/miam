@@ -1,0 +1,484 @@
+/* Style de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding-top: 70px; /* Évite que le contenu soit caché sous le header */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: rgb(35, 135, 103);
+}
+
+.burger-menu {
+  display: flex;
+  align-items: center;
+}
+
+.burger {
+  z-index: 1100;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger .bar {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.burger.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+  position: absolute;
+}
+
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 50%;
+  position: absolute;
+}
+
+/* Menu de navigation */
+.nav-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: top 0.5s ease;
+  z-index: 1000;
+}
+
+.nav-menu.open {
+  top: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Par défaut, en colonne pour les petits écrans */
+  align-items: center;
+}
+
+.nav-menu li {
+  margin: 20px 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: rgb(35, 135, 103);
+}
+
+/* Panier à droite */
+.panier-right {
+  display: flex;
+  align-items: center;
+}
+
+.panier-right img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Section Pack */
+.pack {
+  padding: 50px 0;
+}
+
+.pack .container-titre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.container-titre h1 {
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.pack .container {
+  display: flex;
+  flex-direction: column; /* Alignement vertical */
+  align-items: center; /* Centre horizontalement les éléments à l'intérieur */
+  text-align: center; /* Centre le texte */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.grid__item {
+  display: flex;
+  flex-direction: column; /* Alignement vertical */
+  align-items: center; /* Centre horizontalement les éléments à l'intérieur */
+  text-align: center; /* Centre le texte */
+  transition: transform 0.3s; /* Transition pour l'effet hover */
+  margin-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card__image {
+  width: 100%; /* L'image prend toute la largeur de la carte */
+  height: 240px; /* Hauteur fixe pour une bonne adaptation */
+  object-fit: cover; /* Couvrir le cadre sans déformation */
+  object-position: center; /* Centre l'image à l'intérieur du cadre */
+}
+
+.card__inner {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.card__title-container {
+  background-color: white; /* Fond blanc pour le conteneur du titre */
+  padding: 15px; /* Espacement autour du titre */
+  border-radius: 8px; /* Coins arrondis */
+  text-align: center; /* Centre le texte */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet d'élévation */
+}
+
+.card__title {
+  color: rgb(35, 135, 103); /* Couleur du texte */
+  font-size: 30px; /* Taille de la police du titre */
+  font-weight: bold; /* Poids de la police */
+  margin: 0; /* Supprime la marge par défaut */
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: height 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover .card__overlay {
+  z-index: 1100;
+  height: 100%;
+}
+
+.card__link button {
+  background-color: rgb(35, 135, 103); /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Supprime la bordure par défaut */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px 20px; /* Remplissage interne */
+  font-size: 18px; /* Taille de la police du bouton */
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+  transition: background-color 0.3s ease; /* Transition pour l'effet hover */
+}
+
+.card__link button:hover {
+  background-color: rgb(16, 63, 48); /* Couleur du bouton au survol */
+}
+
+.card__link {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card__link {
+  opacity: 1;
+}
+
+/* section home */
+
+.home {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.home .container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Titre principal */
+.titre {
+  font-size: 48px;
+  text-align: center;
+  color: #232323;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.titre span {
+  color: rgb(35, 135, 103);
+}
+
+/* Contenu de la section */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.image-container {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+
+.foodtruck-img {
+  width: 70%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.foodtruck-img:hover {
+  transform: scale(1.05);
+}
+
+.text-container {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.intro {
+  font-weight: 300;
+  font-family: cursive;
+  font-size: 22px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: black;
+  text-align: justify;
+}
+
+.intro strong {
+  color: rgb(35, 135, 103);
+}
+
+/* Style global pour la section galerie */
+.galerie {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.galerie .titre {
+  font-size: 28px;
+  text-align: left;
+  color: #232323;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Conteneur principal */
+.galerie .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Structure du carrousel */
+.carousel {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel__track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 1s ease-in-out; /* Transition plus lente pour un défilement fluide */
+}
+
+.carousel__slide {
+  min-width: 300px;
+  list-style: none;
+  margin-right: 20px; /* Espacement entre les images */
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Boutons de navigation */
+.left,
+.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.left:hover,
+.right:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsivité */
+@media (max-width: 749px) {
+  .left,
+  .right {
+    padding: 8px 12px;
+  }
+}
+
+/* Media query pour les grands écrans */
+@media screen and (min-width: 750px) {
+  .burger {
+    display: none; /* Cacher le burger sur grands écrans */
+  }
+
+  .nav-menu {
+    position: static; /* Position normale pour le menu */
+    background-color: transparent; /* Fond transparent */
+    height: auto; /* Hauteur automatique */
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    justify-content: flex-end; /* Aligne les éléments à droite */
+  }
+
+  .nav-menu ul {
+    display: flex; /* Affiche le menu en ligne */
+    gap: 20px; /* Espacement entre les items du menu */
+    flex-direction: row; /* Assurez-vous que les éléments sont en ligne */
+  }
+
+  .nav-menu li {
+    margin: 0; /* Pas de marge autour des éléments de la liste */
+  }
+
+  .nav-menu li a {
+    font-size: 18px; /* Taille de la police pour les liens */
+  }
+
+  .nav-menu li a:hover {
+    color: rgb(35, 135, 103); /* Couleur au survol */
+  }
+
+  .pack .titre {
+    margin-bottom: 100px;
+  }
+
+  .pack .container {
+    display: flex;
+    flex-direction: row; /* Aligne les éléments en ligne */
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: center; /* Centre les éléments horizontalement */
+    text-align: center; /* Centre le texte */
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+
+  .grid__item {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments internes verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    text-align: center; /* Centre le texte */
+    transition: transform 0.3s; /* Transition pour l'effet hover */
+    margin-bottom: 100px;
+    width: 45%; /* Chaque item prend 45% de la largeur */
+    margin: 0 2.5%; /* Espace entre les items pour un total de 100% */
+  }
+}
