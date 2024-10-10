@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MIAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./contact.css" />
+</head>
+
+<body>
+
+    <header id="header" class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>MIAM</h1>
+            </div>
+            <div class="burger-menu">
+                <button class="burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-details">
+                    <h2>Nos coordonnées</h2>
+                    <p><strong>GROUPE MIAM</strong></p>
+                    <p>adresse de l'établissement<br>85000 Noirmoutier<br>+33 (0)6 24 70 89 44</p>
+
+                    <h3>Le Restaurants</h3>
+                    <ul>
+                        <li><strong>MIAM</strong> +33 (0)6 70 89 55 11</li>
+                    </ul>
+
+                    <h3>La Boutique se déplace</h3>
+                    <ul>
+                        <li><strong>Noirmoutier en île</strong> - dimanche - mardi</li>
+                        <li><strong>Nantes</strong> - mercredi - jeudi</li>
+                        <li><strong>Chalon</strong> - vendredi - samedi</li>
+                    </ul>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Contactez-nous</h2>
+                    <p>Pour toute réservation, nous vous invitons à contacter directement le restaurant par téléphone.
+                    </p>
+
+                    <form action="" class="form">
+                        <div class="form-group">
+                            <label for="firstname">Nom</label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Nom" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Prénom</label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Prénom" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Adresse e-mail" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objet">objet</label>
+                            <input type="objet" name="objet" id="objet" placeholder="Objet" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" placeholder="Votre message" rows="6"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js" defer></script>
+
+</body>
+
+</html>

@@ -32,7 +32,7 @@ body {
 
 .logo h1 {
   font-size: 24px;
-  color: rgb(35, 135, 103);
+  color: #ff416c;
 }
 
 .burger-menu {
@@ -119,7 +119,7 @@ body {
 }
 
 .nav-menu li a:hover {
-  color: rgb(35, 135, 103);
+  color: #ff416c;
 }
 
 /* Panier à droite */
@@ -210,7 +210,7 @@ body {
 }
 
 .card__title {
-  color: rgb(35, 135, 103); /* Couleur du texte */
+  color: #ff416c; /* Couleur du texte */
   font-size: 30px; /* Taille de la police du titre */
   font-weight: bold; /* Poids de la police */
   margin: 0; /* Supprime la marge par défaut */
@@ -235,7 +235,7 @@ body {
 }
 
 .card__link button {
-  background-color: rgb(35, 135, 103); /* Couleur de fond du bouton */
+  background-color: #ff416c; /* Couleur de fond du bouton */
   color: white; /* Couleur du texte du bouton */
   border: none; /* Supprime la bordure par défaut */
   border-radius: 5px; /* Coins arrondis */
@@ -246,7 +246,7 @@ body {
 }
 
 .card__link button:hover {
-  background-color: rgb(16, 63, 48); /* Couleur du bouton au survol */
+  background-color: #a62644; /* Couleur du bouton au survol */
 }
 
 .card__link {
@@ -287,7 +287,7 @@ body {
 }
 
 .titre span {
-  color: rgb(35, 135, 103);
+  color: #ff416c;
 }
 
 /* Contenu de la section */
@@ -334,7 +334,7 @@ body {
 }
 
 .intro strong {
-  color: rgb(35, 135, 103);
+  color: #ff416c;
 }
 
 /* Style global pour la section galerie */
@@ -417,6 +417,78 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* Modern Footer Styles */
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+footer .grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer .grid__item {
+  flex: 1;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+footer .brand strong {
+  font-size: 2.2rem;
+  letter-spacing: 0.05rem;
+  color: #ff416c;
+  text-transform: uppercase;
+}
+
+footer .contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer .contact li {
+  margin: 0;
+}
+
+footer .contact a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.2rem;
+}
+
+footer .contact a:hover {
+  color: #ff416c;
+}
+
+footer .copyright {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+footer .copyright p {
+  margin: 0;
+}
+
 /* Responsivité */
 @media (max-width: 749px) {
   .titre {
@@ -445,6 +517,15 @@ body {
 .left,
 .right {
   padding: 8px 12px;
+}
+
+footer .grid {
+  flex-direction: column;
+}
+
+footer .contact {
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* Media query pour les grands écrans */
@@ -476,7 +557,7 @@ body {
   }
 
   .nav-menu li a:hover {
-    color: rgb(35, 135, 103); /* Couleur au survol */
+    color: #ff416c; /* Couleur au survol */
   }
 
   .pack .titre {
